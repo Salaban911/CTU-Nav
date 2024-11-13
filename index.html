@@ -236,7 +236,7 @@
     <script>
         var map = L.map('map').setView([11.268067, 124.008788], 15); // Initial zoom to CTU DAANBANTAYAN
 
-        {    
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{    
             attribution: '&copy; <a href="https://www.ctu.edu.ph/daanbantayan/">Daanbantayan, Cebu</a> CTU-DB'
         }).addTo(map);
 
