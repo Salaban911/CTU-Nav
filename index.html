@@ -10,19 +10,19 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
+    
         * {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
         }
-
+    
         body {
             background-color: #121212;
             color: #FFA500;
             overflow: hidden;
         }
-
+    
         .main {
             display: flex;
             justify-content: center;
@@ -30,7 +30,7 @@
             height: 100vh;
             flex-direction: column;
         }
-
+    
         /* Loading screen styles */
         .loading-screen {
             position: fixed;
@@ -45,11 +45,11 @@
             z-index: 9999;
             transition: opacity 1s ease;
         }
-
+    
         .loading-screen img {
             width: 150px;
         }
-
+    
         .container {
             display: flex;
             flex-direction: column;
@@ -61,17 +61,17 @@
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             visibility: hidden; /* Initially hidden */
         }
-
+    
         .map-container {
             width: 100%;
-            height: 400px;
+            height: 300px; /* Default height for mobile */
         }
-
+    
         .map {
             width: 100%;
             height: 100%;
         }
-
+    
         .marker-container {
             width: 100%;
             height: auto;
@@ -81,7 +81,7 @@
             color: #FFA500;
             margin-top: 20px;
         }
-
+    
         .marker-container > h1 {
             text-align: center;
             margin: 10px;
@@ -90,24 +90,24 @@
             gap: 10px;
             color: #FFA500;
         }
-
+    
         .marker-container img {
             width: 40px;
             height: 40px;
         }
-
+    
         .marked > h2 {
             text-align: center;
             margin-top: 10px;
             color: #FFA500;
         }
-
+    
         .search-bar {
             margin: 15px 10px;
             display: flex;
             justify-content: center;
         }
-
+    
         .search-bar input {
             width: 90%;
             padding: 8px;
@@ -118,7 +118,7 @@
             color: #FFA500;
             outline: none;
         }
-
+    
         #markedLocations {
             overflow-y: auto;
             max-height: 300px;
@@ -128,14 +128,14 @@
             background-color: #1c1c1c;
             border-radius: 5px;
         }
-
+    
         #markedLocations > li {
             display: flex;
             justify-content: center;
             align-items: center;
             color: #FFA500;
         }
-
+    
         #markedLocations > li div {
             display: flex;
             justify-content: space-between;
@@ -145,7 +145,7 @@
             padding: 10px;
             border-radius: 5px;
         }
-
+    
         #markedLocations > li div button {
             font-size: 16px;
             color: #FFA500;
@@ -154,11 +154,11 @@
             border: none;
             cursor: pointer;
         }
-
+    
         #markedLocations > li div button:hover {
             color: #FF6600;
         }
-
+    
         /* Media Queries for responsive design */
         @media (min-width: 600px) {
             .container {
@@ -167,17 +167,25 @@
                 width: 90%;
                 margin: 20px auto;
             }
-
+    
             .map-container {
                 width: 70%;
-                height: 100%;
+                height: 100%; /* Make the map container take up more space on larger devices */
             }
-
+    
             .marker-container {
                 width: 30%;
             }
         }
+    
+        /* For smaller devices (mobile) */
+        @media (max-width: 600px) {
+            .map-container {
+                height: 400px; /* Make the map container bigger on small screens */
+            }
+        }
     </style>
+    
 </head>
 <body>
 
